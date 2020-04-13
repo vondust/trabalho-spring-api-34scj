@@ -1,5 +1,6 @@
 package br.com.fiap.application;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Objects;
 
@@ -29,8 +30,12 @@ public class CartaoService {
 	private static final ModelMapper<Cartao, CartaoEntity> MAPPER = new CartaoMapper();
 
 	public Cartao cria(Long idAluno, Cartao model) {
+		if (Objects.isNull(model.getId()))
+			model.setValorUtilizado(BigDecimal.ZERO);
+
 		Aluno aluno = serviceAluno.buscaPorId(idAluno);
 		aluno.setCartao(model);
+
 		return serviceAluno.cria(aluno).getCartao();
 	}
 

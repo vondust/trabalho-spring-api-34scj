@@ -68,4 +68,8 @@ public class CompraService {
 		cartao.atualizaValorUtilizado(valorDebito);
 		repositoryCartao.save(MAPPER_CARTAO.toEntity(cartao));
 	}
+
+	public List<Compra> extratoDoAluno(Long id) {
+		return MAPPER.toDto(repository.extratoDoAluno(id));
+	}
 }

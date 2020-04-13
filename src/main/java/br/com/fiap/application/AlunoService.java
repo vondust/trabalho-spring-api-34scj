@@ -1,6 +1,8 @@
 package br.com.fiap.application;
 
+import java.math.BigDecimal;
 import java.util.List;
+import java.util.Objects;
 
 import javax.persistence.EntityNotFoundException;
 
@@ -22,23 +24,20 @@ public class AlunoService {
 	private static final ModelMapper<Aluno, AlunoEntity> MAPPER = new AlunoMapper();
 
 	public Aluno cria(Aluno model) {
-		return MAPPER.toDto(
-				repository.save(
-						MAPPER.toEntity(model)));
+		if (Objects.nonNull(model.getCartao()) && Objects.isNull(model.getCartao().getId()))
+			model.getCartao().setValorUtilizado(BigDecimal.ZERO);
+
+		return MAPPER.toDto(repository.save(MAPPER.toEntity(model)));
 	}
 
 	public Aluno atualiza(Long id, Aluno model) {
 		buscaPorId(id);
 		model.setCartao(null);
-		return MAPPER.toDto(
-				repository.save(
-						MAPPER.toEntity(model)));
+		return MAPPER.toDto(repository.save(MAPPER.toEntity(model)));
 	}
 
 	public Aluno buscaPorId(Long id) {
-		return MAPPER.toDto(
-				repository.findById(id)
-					.orElseThrow(() -> new EntityNotFoundException(id.toString())));
+		return MAPPER.toDto(repository.findById(id).orElseThrow(() -> new EntityNotFoundException(id.toString())));
 	}
 
 	public void remove(Long id) {
