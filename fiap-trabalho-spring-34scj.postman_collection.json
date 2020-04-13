@@ -1,0 +1,586 @@
+{
+	"info": {
+		"_postman_id": "780f0807-41db-4c36-b41f-5cfc14ab97b9",
+		"name": "fiap-trabalho-spring-34scj",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "alunos",
+			"item": [
+				{
+					"name": "alunos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/fiap/v1/alunos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fiap",
+								"v1",
+								"alunos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "aluno",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/fiap/v1/alunos/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fiap",
+								"v1",
+								"alunos",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "aluno",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"stag\",\n    \"matricula\": \"3095565\",\n    \"turma\": \"100-11\",\n    \"cartao\": {\n        \"titular\": \"stag\",\n        \"numero\": 9874654132146548,\n        \"vencimento\": \"2030-01-01\",\n        \"valorLimite\": 1000,\n        \"valorUtilizado\": 300\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/fiap/v1/alunos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fiap",
+								"v1",
+								"alunos"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://localhost:8080/fiap/v1/alunos",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nome\": \"josefino\",\n    \"matricula\": \"3095565\",\n    \"turma\": \"100-11\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/fiap/v1/alunos",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"fiap",
+										"v1",
+										"alunos"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 12 Apr 2020 23:13:32 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 3,\n    \"nome\": \"josefino\",\n    \"matricula\": \"3095565\",\n    \"turma\": \"100-11\",\n    \"cartao\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "aluno",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"josicleidsson\",\n    \"matricula\": \"3095566\",\n    \"turma\": \"100-12\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/fiap/v1/alunos/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fiap",
+								"v1",
+								"alunos",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "aluno",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/fiap/v1/alunos/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fiap",
+								"v1",
+								"alunos",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "cartoes",
+			"item": [
+				{
+					"name": "cartoes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/fiap/v1/cartoes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fiap",
+								"v1",
+								"cartoes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cartao",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/fiap/v1/alunos/4/cartoes/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fiap",
+								"v1",
+								"alunos",
+								"4",
+								"cartoes",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cartao",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"numero\": 9874654132146543,\n    \"vencimento\": \"2030-01-03\",\n    \"valorLimite\": 500,\n    \"valorUtilizado\": 500\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/fiap/v1/alunos/2/cartoes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fiap",
+								"v1",
+								"alunos",
+								"2",
+								"cartoes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cartao",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"numero\": 9874654132146545,\n    \"vencimento\": \"2030-01-06\",\n    \"valorLimite\": 4500,\n    \"valorUtilizado\": 4500\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/fiap/v1/alunos/2/cartoes/15",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fiap",
+								"v1",
+								"alunos",
+								"2",
+								"cartoes",
+								"15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cartao",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/fiap/v1/alunos/2/cartoes/15",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fiap",
+								"v1",
+								"alunos",
+								"2",
+								"cartoes",
+								"15"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "compras",
+			"item": [
+				{
+					"name": "compras",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/fiap/v1/compras",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fiap",
+								"v1",
+								"compras"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "compra",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/fiap/v1/compras/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fiap",
+								"v1",
+								"compras",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "compra",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"valorDebito\": 1.99,\n    \"cartaoUtilizado\": {\n        \"id\": 5,\n        \"titular\": \"stag\",\n        \"numero\": 9874654132146548,\n        \"vencimento\": \"2030-01-01\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/fiap/v1/compras",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fiap",
+								"v1",
+								"compras"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "compra",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"valorDebito\": 16.99,\n    \"cartaoUtilizado\": {\n        \"id\": 5,\n        \"titular\": \"stag\",\n        \"numero\": 9874654132146548,\n        \"vencimento\": \"2030-01-01\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/fiap/v1/compras",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"fiap",
+										"v1",
+										"compras"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Apr 2020 01:50:35 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 6,\n    \"valorDebito\": 16.99,\n    \"cartaoUtilizado\": {\n        \"id\": 5,\n        \"titular\": \"stag\",\n        \"numero\": 9874654132146548,\n        \"vencimento\": \"2030-01-01\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "compra",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"valorDebito\": 17.99\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/fiap/v1/compras/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fiap",
+								"v1",
+								"compras",
+								"6"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "compra",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"valorDebito\": 17.99\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/fiap/v1/compras/6",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"fiap",
+										"v1",
+										"compras",
+										"6"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Apr 2020 02:30:07 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 6,\n    \"valorDebito\": 17.99,\n    \"idCartaoUtilizado\": 5\n}"
+						}
+					]
+				},
+				{
+					"name": "compra",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/fiap/v1/compras/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fiap",
+								"v1",
+								"compras",
+								"10"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
