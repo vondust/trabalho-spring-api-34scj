@@ -1,6 +1,9 @@
 package br.com.fiap.adapter.http.controller;
 
+import java.io.IOException;
 import java.util.List;
+
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -17,10 +20,10 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.multipart.MultipartFile;
 
 import br.com.fiap.application.CompraService;
 import br.com.fiap.core.model.Compra;
+import br.com.fiap.core.util.CsvUtils;
 
 @RestController
 @RequestMapping("/fiap/v1/compras")
@@ -57,11 +60,23 @@ public class CompraController {
 		return service.busca();
 	}
 
-	@GetMapping("/extrato/aluno/{id}")
-	public ResponseEntity<?> extrato(@RequestHeader HttpHeaders headers, @PathVariable Long id) {
-		if (headers.getAccept().contains(MediaType.TEXT_PLAIN))
-			return null; // TODO
+	@GetMapping("/alunos/{id}/extratos")
+	public ResponseEntity<byte[]> extrato(HttpServletResponse response, @RequestHeader HttpHeaders headers,
+			@PathVariable Long id) throws IOException {
 
-		return ResponseEntity.ok(service.extratoDoAluno(id));
+		byte[] extratoCsv = CsvUtils.generate(service.extratoDoAluno(id));
+		return ResponseEntity.ok()
+				.headers(extratoHeaders(id.toString()))
+				.contentType(MediaType.APPLICATION_OCTET_STREAM)
+				.contentLength(extratoCsv.length)
+				.body(extratoCsv);
+	}
+
+	private HttpHeaders extratoHeaders(String id) {
+		String filename = "extrato_aluno_" + id + ".csv";
+		HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
+		headers.set(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + filename);
+		return headers;
 	}
 }

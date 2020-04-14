@@ -1,6 +1,7 @@
 package br.com.fiap.core.model;
 
 import java.math.BigDecimal;
+import java.util.Date;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -25,5 +26,6 @@ public class Compra {
 
 	private Long id;
 	private BigDecimal valorDebito;
+	private Date data;
 	private Long idCartaoUtilizado;
 }
