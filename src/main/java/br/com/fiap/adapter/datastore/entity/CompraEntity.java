@@ -1,6 +1,7 @@
 package br.com.fiap.adapter.datastore.entity;
 
 import java.math.BigDecimal;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -28,10 +29,10 @@ import lombok.ToString;
 public class CompraEntity {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long id;
 	private BigDecimal valorDebito;
-
+	private Date data;
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
 	private CartaoEntity cartaoUtilizado;
 }

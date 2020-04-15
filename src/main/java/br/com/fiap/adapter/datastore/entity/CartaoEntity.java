@@ -29,7 +29,7 @@ import lombok.Setter;
 public class CartaoEntity {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long id;
 	@Column(unique = true, nullable = false)
 	private BigInteger numero;

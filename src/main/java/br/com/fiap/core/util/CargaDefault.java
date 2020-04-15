@@ -42,7 +42,7 @@ public class CargaDefault {
 			for (int i = 0; i < 7; i++) {
 				BigDecimal debito = debito(i);
 				aluno.getCartao().setValorUtilizado(aluno.getCartao().getValorUtilizado().add(debito));
-				compras.add(new CompraEntity(null, debito, aluno.getCartao()));
+				compras.add(new CompraEntity(null, debito, new Date(), aluno.getCartao()));
 			}
 		}
 

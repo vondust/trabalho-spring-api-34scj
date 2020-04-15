@@ -28,7 +28,7 @@ import lombok.ToString;
 public class AlunoEntity {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long id;
 	private String nome;
 	@Column(unique = true)
