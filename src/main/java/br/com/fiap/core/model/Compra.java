@@ -3,6 +3,7 @@ package br.com.fiap.core.model;
 import java.math.BigDecimal;
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -26,6 +27,7 @@ public class Compra {
 
 	private Long id;
 	private BigDecimal valorDebito;
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "pt-BR", timezone = "Brazil/East")
 	private Date data;
 	private Long idCartaoUtilizado;
 }

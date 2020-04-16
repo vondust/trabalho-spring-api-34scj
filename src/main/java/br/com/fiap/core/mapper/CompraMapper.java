@@ -17,6 +17,7 @@ public class CompraMapper implements ModelMapper<Compra, CompraEntity> {
 		return CompraEntity.builder()
 				.id(dto.getId())
 				.valorDebito(dto.getValorDebito())
+				.data(dto.getData())
 				.cartaoUtilizado(CartaoEntity.builder().id(dto.getIdCartaoUtilizado()).build())
 				.build();
 	}
@@ -25,6 +26,7 @@ public class CompraMapper implements ModelMapper<Compra, CompraEntity> {
 		return Compra.builder()
 				.id(entity.getId())
 				.valorDebito(entity.getValorDebito())
+				.data(entity.getData())
 				.idCartaoUtilizado(Objects.isNull(entity.getCartaoUtilizado()) ? null
 						: entity.getCartaoUtilizado().getId())
 				.build();
