@@ -32,7 +32,6 @@ public class AlunoService {
 
 	public Aluno atualiza(Long id, Aluno model) {
 		buscaPorId(id);
-		model.setCartao(null);
 		return MAPPER.toDto(repository.save(MAPPER.toEntity(model)));
 	}
 

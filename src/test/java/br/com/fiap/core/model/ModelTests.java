@@ -16,7 +16,7 @@ import br.com.fiap.core.model.Compra.CompraBuilder;
 
 @ActiveProfiles("test")
 @SpringBootTest
-public class ModelTest {
+public class ModelTests {
 
 	private static Date now = new Date();
 	
@@ -25,18 +25,26 @@ public class ModelTest {
 		Aluno aluno = new Aluno();
 		aluno.setId(1l);
 		aluno.setNome("nome do aluno");
-		aluno.setMatricula("001-01");
+		aluno.setMatricula("32145678");
+		aluno.setTurma("001-01");
 		aluno.setCartao(null);
 
-		AlunoBuilder builder = Aluno.builder().id(1l).nome("nome do aluno").matricula("001-01").cartao(null);
+		AlunoBuilder builder = Aluno.builder()
+				.id(1l)
+				.nome("nome do aluno")
+				.matricula("32145678")
+				.turma("001-01")
+				.cartao(null);
 
 		assertThat(aluno).hasFieldOrPropertyWithValue("id", 1l);
 		assertThat(aluno).hasFieldOrPropertyWithValue("nome", "nome do aluno");
-		assertThat(aluno).hasFieldOrPropertyWithValue("matricula", "001-01");
+		assertThat(aluno).hasFieldOrPropertyWithValue("matricula", "32145678");
+		assertThat(aluno).hasFieldOrPropertyWithValue("turma", "001-01");
 		assertThat(aluno).hasFieldOrPropertyWithValue("cartao", null);
 		assertThat(builder).hasFieldOrPropertyWithValue("id", 1l);
 		assertThat(builder).hasFieldOrPropertyWithValue("nome", "nome do aluno");
-		assertThat(builder).hasFieldOrPropertyWithValue("matricula", "001-01");
+		assertThat(builder).hasFieldOrPropertyWithValue("matricula", "32145678");
+		assertThat(builder).hasFieldOrPropertyWithValue("turma", "001-01");
 		assertThat(builder).hasFieldOrPropertyWithValue("cartao", null);
 		assertThat(aluno.toString()).isEqualTo(builder.build().toString());
 	}
