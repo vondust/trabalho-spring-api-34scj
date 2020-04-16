@@ -2,7 +2,7 @@ spring:
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
   datasource:
     url: jdbc:postgresql://ec2-52-6-143-153.compute-1.amazonaws.com:5432/dbvghu1rck19oi
     username: gzanrlevryrfcm
